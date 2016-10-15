@@ -6,11 +6,25 @@ var boundaries = document.getElementsByClassName("boundary");
 	{
 		boundaries[x].addEventListener("mouseover",function()
 			{
-				for (var j =0; j < (boundaries.length-1); j++)
+				for (var j =0; j <(boundaries.length-1); j++)
 				{
+
 					lose= true;
 					boundaries[j].setAttribute ("class", "boundary youlose");
 				}
+
 			});
+
 	}
-});
+	var win= document.getElementById("end");
+ win.addEventListener("mouseover",function()
+	{
+		if (lose== true)
+		{
+			alert("You lose");
+		}
+		else
+		{
+			alert("you win");
+		}
+ });
