@@ -1,5 +1,7 @@
+
 document.addEventListener("DOMContentLoaded", function()
 {
+	var playing = false;
 	var lose=false;
 var boundaries = document.getElementsByClassName("boundary");
 	for(var x =0; x < (boundaries.length-1); x++)
@@ -27,9 +29,11 @@ var boundaries = document.getElementsByClassName("boundary");
 					boundaries[j].setAttribute ("class","boundary");
 				}
 		}
+		playing= true;
 		document.getElementById("status").innerHTML = "Move your mouse over the 'S' to begin.";
 });
 			
+		
 
 	var win= document.getElementById("end");
  win.addEventListener("mouseover",function()
@@ -46,4 +50,35 @@ var boundaries = document.getElementsByClassName("boundary");
 	
 	
  });
+
+ 	var sa = document.getElementById("start");
+ 	var s = document.getElementById("start").offsetWidth;
+ 	var b = document.getElementById("boundary1").offsetHeight;
+ 	var se=document.getElementById("start").offsetLeft;
+ 	var x = event.clientX;
+ 	var y = event.clientY;
+ 	restart.addEventListener("mouseover", function()
+ 	{
+ 		if(playing== true)
+ 		{
+ 			s=document.getElementById("maze").offsetLeft;
+ 			x= event.clientX;
+ 			if(x<s)
+ 			{
+ 				document.getElementById("status").innerHTML ="Cheater!!!";
+
+ 				for(var p =0; x < (boundaries.length-1); p++)
+						{
+							if (playing)
+					for (var j =0; j <(boundaries.length-1); j++)
+							{
+					
+					boundaries[j].setAttribute ("class","boundary youlose");
+							}
+						}	
+ 			}
+ 			
+ 		}
+
+ 	});
 });
