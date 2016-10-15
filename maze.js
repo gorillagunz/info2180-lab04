@@ -16,6 +16,19 @@ var boundaries = document.getElementsByClassName("boundary");
 			});
 
 	}
+	var restart= document.getElementById("start");
+		restart.addEventListener("click",function()
+			{
+		for(var x =0; x < (boundaries.length-1); x++)
+			{
+				for (var j =0; j <(boundaries.length-1); j++)
+				{
+					lose=false;
+					boundaries[j].setAttribute ("class","boundary");
+				}
+		}
+		document.getElementById("status").innerHTML = "Move your mouse over the 'S' to begin.";
+});
 	var win= document.getElementById("end");
  win.addEventListener("mouseover",function()
 	{
