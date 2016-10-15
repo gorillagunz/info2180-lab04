@@ -29,15 +29,21 @@ var boundaries = document.getElementsByClassName("boundary");
 		}
 		document.getElementById("status").innerHTML = "Move your mouse over the 'S' to begin.";
 });
+			
+
 	var win= document.getElementById("end");
  win.addEventListener("mouseover",function()
 	{
 		if (lose== true)
 		{
-			alert("You lose");
+			document.getElementById("status").innerHTML = "You lose";;
 		}
 		else
 		{
-			alert("you win");
+			document.getElementById("status").innerHTML = "You win";;
 		}
+		
+	
+	
  });
+});
